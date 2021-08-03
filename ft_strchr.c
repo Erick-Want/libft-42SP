@@ -5,13 +5,13 @@ char *ft_strchr(const char *s, int c)
 	size_t i;
 
 	i = 0;
-	while(s[i] =! '\0')
+	while(*s)
 	{
 		if (s[i] == c)
-			return(&s[i]);
+			return((char *)(s + i));
 		i++;
 	}
 	if (s[i] == '\0' && c == '\0')
-		return(&s[i]);
+		return((char *)(s + i));
 	return(NULL);
 }
