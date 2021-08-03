@@ -16,6 +16,8 @@ void ft_bzero(void *s, size_t n);
 int ft_atoi(const char *nptr);
 void *ft_memset(void *s, int c, size_t n);
 void *ft_memchr(const void *s, int c, size_t n);
+size_t ft_strlcpy(char *dest, const char *src, size_t size);
+size_t ft_strlcat(char *dest, const char *src, size_t size);
 
 
 #endif
