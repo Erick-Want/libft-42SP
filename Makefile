@@ -21,6 +21,10 @@ SRCS = ft_isalpha.c \
 		ft_memmove.c \
 		ft_strncmp.c \
 		ft_strnstr.c \
+		ft_calloc.c \
+		ft_strdup.c \
+		ft_putchar_fd.c \
+		ft_putstr_fd.c \
 
 OBJS = ${SRCS:.c=.o}
 CFLAGS = -Wall -Werror -Wextra
