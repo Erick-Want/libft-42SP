@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 15:26:57 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/05 16:03:14 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/05 16:24:59 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		len_little++;
 	while (big[i] != '\0' && len >= len_little)
 	{
-		len--;
 		while (big[i + match] == little[match])
 		{
 			if (match + 1 == len_little)
@@ -35,6 +34,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			match++;
 		}
 		match = 0;
+		len--;
 		i++;
 	}
 	return (NULL);
