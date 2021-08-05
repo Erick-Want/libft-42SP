@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 15:01:09 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/05 17:26:00 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/05 17:27:50 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*sub;
-	size_t	i;
+	char			*sub;
+	size_t			i;
 	unsigned int	len_s;
 
 	i = 0;
