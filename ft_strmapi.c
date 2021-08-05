@@ -1,20 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/05 15:01:22 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/05 15:03:31 by ermatheu         ###   ########.fr       */
+/*   Created: 2021/08/05 15:00:30 by ermatheu          #+#    #+#             */
+/*   Updated: 2021/08/05 15:07:47 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (c >= 97 && c <= 122)
-		c = c - 32;
-	return (c);
+	unsigned int	i;
+	char	*s1;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	s1 = (char *)malloc(sizeof(char) * i + 1);
+	if (s1 == NULL)
+		return (NULL);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		s1[i] = f(i, s[i]);
+		i++;
+	}
+	s1[i] = '\0';
+	return (s1);
 }

@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/08/05 15:01:38 by ermatheu          #+#    #+#              #
+#    Updated: 2021/08/05 15:01:39 by ermatheu         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
 
 SRCS = ft_isalpha.c \
@@ -27,6 +39,9 @@ SRCS = ft_isalpha.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_striteri.c \
+		ft_strmapi.c \
+		ft_strjoin.c \
+		ft_substr.c \
 
 OBJS = ${SRCS:.c=.o}
 CFLAGS = -Wall -Werror -Wextra
