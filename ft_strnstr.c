@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/05 15:00:41 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/05 15:02:44 by ermatheu         ###   ########.fr       */
+/*   Created: 2021/08/05 15:26:57 by ermatheu          #+#    #+#             */
+/*   Updated: 2021/08/05 16:03:14 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,27 @@
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
+	size_t	len_little;
 	size_t	match;
 
-	match = 0;
 	i = 0;
-	if (len < ft_strlen(little))
-		return (NULL);
-	while (big[i] != '\0')
+	len_little = 0;
+	match = 0;
+	if (little[i] == '\0')
+		return ((char *)&big[i]);
+	while (little[len_little] != '\0')
+		len_little++;
+	while (big[i] != '\0' && len >= len_little)
 	{
-		if (len == 0)
-			break ;
 		len--;
-		while (big[i + match] == little[match] && len > match)
+		while (big[i + match] == little[match])
+		{
+			if (match + 1 == len_little)
+				return ((char *)&big[i]);
 			match++;
-		i++;
-		if (match == ft_strlen(little))
-			return ((char *)&big[i - match]);
+		}
 		match = 0;
+		i++;
 	}
 	return (NULL);
 }
-
-// int main()
-// {
-// 	char haystack[30] = "aaabcabcd";
-// 	char needle[10] = "aab";
-
-// 	ft_strnstr(haystack, needle, 2);
-// }

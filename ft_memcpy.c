@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 14:59:23 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/05 15:05:28 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/05 16:04:57 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t	i;
-	unsigned char	*dest1;
-	const unsigned char 	*src1;
+	size_t				i;
+	unsigned char		*dest1;
+	const unsigned char	*src1;
 
 	i = 0;
 	dest1 = dest;

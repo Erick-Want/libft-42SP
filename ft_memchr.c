@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 14:59:08 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/05 14:59:12 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/05 16:04:13 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
+	size_t		i;
 	const char	*s1;
 
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 15:00:30 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/05 15:07:47 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/05 16:03:58 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
-	char	*s1;
+	char			*s1;
 
 	i = 0;
 	while (s[i] != '\0')
