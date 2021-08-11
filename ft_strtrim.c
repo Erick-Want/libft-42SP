@@ -1,41 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/05 15:26:57 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/11 15:45:10 by ermatheu         ###   ########.fr       */
+/*   Created: 2021/08/09 15:12:14 by ermatheu          #+#    #+#             */
+/*   Updated: 2021/08/11 15:49:51 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strtrim(char const *s1, char const *set)
 {
+	char	*newstr;
 	size_t	i;
-	size_t	len_little;
-	size_t	match;
+	size_t	beg;
+	size_t	end;
 
 	i = 0;
-	len_little = 0;
-	match = 0;
-	if (little[i] == '\0')
-		return ((char *)&big[i]);
-	while (little[len_little] != '\0')
-		len_little++;
-	while (big[i] != '\0' && len >= len_little)
+	beg = 0;
+	end = ft_strlen(s1) - 1;
+	while (ft_strrchr(set, s1[beg]))
+		beg++;
+	while (ft_strrchr(set, s1[end]))
+		end--;
+	newstr = malloc (sizeof(char) * (end - beg + 2));
+	if (newstr == NULL)
+		return (NULL);
+	while (i <= end - beg)
 	{
-		while (big[i + match] == little[match])
-		{
-			if (match + 1 == len_little)
-				return ((char *)&big[i]);
-			match++;
-		}
-		match = 0;
-		len--;
+		newstr[i] = s1[beg + i];
 		i++;
 	}
-	return (NULL);
+	newstr[i] = '\0';
+	return (newstr);
 }
