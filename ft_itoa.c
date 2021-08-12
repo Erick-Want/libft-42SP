@@ -1,7 +1,7 @@
 #include "libft.h"
 #include <stdio.h>
 
-static unsigned int	ft_len_int(unsigned int n)
+static unsigned int	ft_len_int(int n)
 {
 	unsigned int	size;
 
@@ -17,10 +17,10 @@ static unsigned int	ft_len_int(unsigned int n)
 char	*ft_itoa(int n)
 {
 	char			*s;
-	unsigned int	nb;
+	long int		nb;
 	unsigned int	i;
 
-	i = ft_len_int(nb);
+	i = ft_len_int(n);
 	nb = n;
 	if (n == 0)
 	{
@@ -49,12 +49,12 @@ char	*ft_itoa(int n)
 	return (s);
 }
 
-int main()
-{
-	int i;
-	char *s1;
+// int main()
+// {
+// 	int i;
+// 	char *s1;
 
-	i = -2147483648;
-	s1 = ft_itoa(i);
-	printf("%s", s1);
-}
+// 	i = -2147483648;
+// 	s1 = ft_itoa(i);
+// 	printf("%s", s1);
+// }

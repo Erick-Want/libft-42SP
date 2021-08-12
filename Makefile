@@ -6,7 +6,7 @@
 #    By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/05 15:01:38 by ermatheu          #+#    #+#              #
-#    Updated: 2021/08/11 16:58:30 by ermatheu         ###   ########.fr        #
+#    Updated: 2021/08/12 20:31:43 by ermatheu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,7 @@ SRCS = ft_isalpha.c \
 		ft_strtrim.c \
 		ft_putnbr_fd.c \
 		ft_itoa.c \
+		ft_split.c \
 
 OBJS = ${SRCS:.c=.o}
 CFLAGS = -Wall -Werror -Wextra
