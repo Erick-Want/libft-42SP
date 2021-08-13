@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 16:01:08 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/11 16:56:56 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/12 21:08:22 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_putnbr_fd(int nb, int fd)
 
 	if (nb < 0)
 	{
-		ft_putchar_fd('-', fd);
+		write(fd,"-", 1);
 		nbr = (unsigned int)(nb * -1);
 	}
 	else

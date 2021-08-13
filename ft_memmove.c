@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 14:59:28 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/05 16:05:15 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/12 21:13:54 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	const unsigned char	*src1;
 
 	i = 0;
+	if (!src)
+		return (NULL);
 	dest1 = dest;
 	src1 = src;
 	if (src1 < dest1)
