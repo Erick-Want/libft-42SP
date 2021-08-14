@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 20:11:43 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/14 14:31:47 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/14 14:38:44 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,7 @@ static void	copy_string(char **matrix, const char *s, char c)
 				s++;
 				y++;
 			}
+			matrix[x][y] = 0;
 			x++;
 		}
 		else
@@ -128,6 +129,8 @@ char	**ft_split(char const *s, char c)
 	int		y;
 	char	**matrix;
 
+	if (!s)
+		return (NULL);
 	i = count_words(s, c);
 	x = 0;
 	y = 0;
