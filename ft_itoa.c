@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/13 11:35:59 by ermatheu          #+#    #+#             */
+/*   Updated: 2021/08/13 11:36:01 by ermatheu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdio.h>
 
@@ -31,7 +43,7 @@ char	*ft_itoa(int n)
 	if (n < 0)
 	{
 		nb = (n * (-1));
-		s = malloc(sizeof(char) * i + 2);// -2147483648
+		s = malloc(sizeof(char) * i + 2);// -2147483648\0
 		i++;
 		s[0] = '-';
 	}
@@ -49,12 +61,12 @@ char	*ft_itoa(int n)
 	return (s);
 }
 
-// int main()
-// {
-// 	int i;
-// 	char *s1;
+int main()
+{
+	int i;
+	char *s1;
 
-// 	i = -2147483648;
-// 	s1 = ft_itoa(i);
-// 	printf("%s", s1);
-// }
+	i = -2147483648;
+	s1 = ft_itoa(i);
+	printf("%s", s1);
+}
