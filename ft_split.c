@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 20:11:43 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/14 14:23:35 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/14 14:31:47 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,7 @@ char	**ft_split(char const *s, char c)
 	x = 0;
 	y = 0;
 	matrix = malloc(sizeof(char *) * i + 1);
-	matrix[i] = '\0';
+	matrix[i] = 0;
 	while (s[y] != '\0')
 	{
 		if (s[y] != c)
