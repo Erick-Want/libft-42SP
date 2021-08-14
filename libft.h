@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 15:01:31 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/14 13:23:00 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/14 14:24:01 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
 void	ft_putnbr_fd(int n, int fd);
 char	*ft_itoa(int n);
-char **ft_split(char const *s, char c);
+char	**ft_split(char const *s, char c);
 
 #endif

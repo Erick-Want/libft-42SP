@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 20:11:43 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/14 13:20:50 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/14 14:23:35 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static int	count_words(const char *s, char c)
 
 	y = 0;
 	i = 0;
-	while (s[y] != '\0')//s = "-erick--matheus"
+	while (s[y] != '\0')
 	{
 		if (s[y] != c)
 		{
@@ -88,7 +88,7 @@ static int	count_letter(const char *s, char c)
 	int	y;
 
 	y = 0;
-	while (*s != c && *s != '\0')//s = "-erick--matheus"
+	while (*s != c && *s != '\0')
 	{
 		s++;
 		y++;
@@ -121,12 +121,12 @@ static void	copy_string(char **matrix, const char *s, char c)
 	}
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	int	i;
-	int x;
-	int y;
-	char **matrix;
+	int		i;
+	int		x;
+	int		y;
+	char	**matrix;
 
 	i = count_words(s, c);
 	x = 0;
@@ -147,18 +147,18 @@ char **ft_split(char const *s, char c)
 	return (matrix);
 }
 
-int main()
-{
-	char	*s;
-	char	**matrix;
-	char	c;
+// int main()
+// {
+// 	char	*s;
+// 	char	**matrix;
+// 	char	c;
 
-	s = "erick-matheus";
-	c = '-';
-	matrix = ft_split(s, c);
-	while (*matrix)
-	{
-		printf("%s\n", *matrix);
-		matrix++;
-	}
-}
+// 	s = "      split       this for   me  !       ";
+// 	c = ' ';
+// 	matrix = ft_split(s, c);
+// 	while (*matrix)
+// 	{
+// 		printf("%s ", *matrix);
+// 		matrix++;
+// 	}
+// }

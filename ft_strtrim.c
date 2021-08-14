@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:12:14 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/11 15:49:51 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/14 14:14:39 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 		beg++;
 	while (ft_strrchr(set, s1[end]))
 		end--;
+	if (end < beg)
+		return (ft_calloc(1, sizeof(char)));
 	newstr = malloc (sizeof(char) * (end - beg + 2));
 	if (newstr == NULL)
 		return (NULL);

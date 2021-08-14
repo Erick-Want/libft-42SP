@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 11:35:59 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/13 11:36:01 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/14 14:17:56 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,12 @@ char	*ft_itoa(int n)
 	return (s);
 }
 
-int main()
-{
-	int i;
-	char *s1;
+// int main()
+// {
+// 	int i;
+// 	char *s1;
 
-	i = -2147483648;
-	s1 = ft_itoa(i);
-	printf("%s", s1);
-}
+// 	i = -2147483648;
+// 	s1 = ft_itoa(i);
+// 	printf("%s", s1);
+// }
