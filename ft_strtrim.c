@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:12:14 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/16 14:53:54 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/16 14:54:41 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i_beg;
 	size_t	i_end;
-	size_t	i;
-	char	*newstr;
+	// size_t	i;
+	// char	*newstr;
 
 	i_beg = 0;
 	i_end = ft_strlen(s1) - 1;
