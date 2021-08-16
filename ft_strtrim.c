@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:12:14 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/16 15:01:41 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/16 15:02:26 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		i_beg++;
 	while (s1[i_end] && ft_strchr(set, s1[i_end]))
 		i_end--;
-	return (ft_substr(s1[i_beg], 0, (i_end + 1)));
+	return (ft_substr(&s1[i_beg], 0, (i_end + 1)));
 }
 
 // int main()
