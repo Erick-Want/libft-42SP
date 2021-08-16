@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 11:35:59 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/14 14:17:56 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/16 12:57:29 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,31 +26,8 @@ static unsigned int	ft_len_int(int n)
 	return (size);
 }
 
-char	*ft_itoa(int n)
+char *copy(unsigned int nb, size_t i, char *s)
 {
-	char			*s;
-	long int		nb;
-	unsigned int	i;
-
-	i = ft_len_int(n);
-	nb = n;
-	if (n == 0)
-	{
-		s = ft_calloc(2, sizeof(char));
-		s[0] = 48;
-		return (s);
-	}
-	if (n < 0)
-	{
-		nb = (n * (-1));
-		s = malloc(sizeof(char) * i + 2);// -2147483648\0
-		i++;
-		s[0] = '-';
-	}
-	else
-		s = malloc(sizeof(char) * i + 1);// 2147483647
-	if (s == NULL)
-		return (NULL);
 	s[--i] = '\0';
 	while (nb != 0)
 	{
@@ -59,6 +36,47 @@ char	*ft_itoa(int n)
 		i--;
 	}
 	return (s);
+}
+
+char	*is_zero(int n)
+{
+	char	*s;
+	if (n == 0)
+	{
+		s = malloc(sizeof(char) * 2);
+		if (!s)
+			return (NULL);
+		s[0] = 48;
+		s[1] = 0;
+	}
+	return (s);
+}
+
+char	*ft_itoa(int n)
+{
+	char			*s;
+	unsigned int	nb;
+	size_t			i;
+
+	i = ft_len_int(n);
+	nb = n;
+	if (n == 0)
+		return (is_zero(n));
+	if (n < 0)
+	{
+		s = malloc(sizeof(char) * i + 2);// -2147483648\0
+		if (!s)
+			return (NULL);
+		i++;
+		s[0] = '-';
+	}
+	else
+	{
+		s = malloc(sizeof(char) * i + 1);// 2147483647
+		if (s == NULL)
+			return (NULL);
+	}
+	return (copy(nb, i, s));
 }
 
 // int main()

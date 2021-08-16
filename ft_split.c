@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 20:11:43 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/14 14:48:04 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/16 10:06:08 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,26 +125,27 @@ static void	copy_string(char **matrix, const char *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	int		i;
-	int		x;
 	int		y;
 	char	**matrix;
 
 	if (!s)
 		return (NULL);
 	i = count_words(s, c);
-	x = 0;
-	y = 0;
+	y = -1;
 	matrix = malloc(sizeof(char *) * i + 1);
+	if (!matrix)
+		return (NULL);
 	matrix[i] = 0;
-	while (s[y] != '\0')
+	i = 0;
+	while (s[++y] != '\0')
 	{
 		if (s[y] != c)
 		{
-			matrix[x++] = malloc(sizeof(char) * count_letter(&s[y], c) + 1);
+			matrix[i++] = malloc(sizeof(char) * count_letter(&s[y], c) + 1);
+			if (!matrix)
+				return (NULL);
 			y = y + count_letter(&s[y], c);
 		}
-		else
-			y++;
 	}
 	copy_string(matrix, s, c);
 	return (matrix);
@@ -161,7 +162,7 @@ char	**ft_split(char const *s, char c)
 // 	matrix = ft_split(s, c);
 // 	while (*matrix)
 // 	{
-// 		printf("%s ", *matrix);
+// 		printf("%s\n", *matrix);
 // 		matrix++;
 // 	}
 // }
