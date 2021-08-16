@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:12:14 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/16 14:07:10 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/16 14:13:09 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	i_beggin;
 	size_t	i_end;
 
+	if (!s1)
+		return (ft_calloc(1, sizeof(char)));
 	i_beggin = 0;
 	i_end = ft_strlen(s1);
 	while (ft_strchr(set, s1[i_beggin]))
@@ -45,8 +47,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 // 	char	*s;
 // 	char	*set;
 
-// 	s = "-a-Erick-Matheusa--a";
-// 	set = "a-";
+// 	s = "";
+// 	set = " \n\t";
 // 	s = ft_strtrim(s, set);
 // 	printf("%s", s);
 // }
