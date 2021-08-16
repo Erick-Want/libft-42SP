@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:12:14 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/16 15:12:29 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/16 15:14:02 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i_end = ft_strlen(s1);
 	while (s1[i_beggin] && ft_strchr(set, s1[i_beggin]))
 		i_beggin++;
-	while (ft_strchr(set, s1[i_end]))
+	while (i_end && ft_strchr(set, s1[i_end]))
 		i_end--;
 	if (i_end == i_beggin)
 		return (ft_calloc(1, sizeof(char)));
