@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 11:35:59 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/16 13:35:49 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/16 13:37:06 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,12 @@ char	*ft_itoa(int n)
 	int				i;
 
 	i = ft_len_int(n);
-	nb = n * (-1);
+	nb = n;
 	if (n == 0)
 		return (is_zero(n));
 	if (n < 0)
 	{
+		nb = n * (-1);
 		s = malloc(sizeof(char) * i + 2);// -2147483648\0
 		if (!s)
 			return (NULL);
