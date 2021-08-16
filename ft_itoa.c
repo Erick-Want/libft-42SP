@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 11:35:59 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/16 12:57:29 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/16 13:07:13 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ char *copy(unsigned int nb, size_t i, char *s)
 char	*is_zero(int n)
 {
 	char	*s;
-	if (n == 0)
-	{
-		s = malloc(sizeof(char) * 2);
-		if (!s)
-			return (NULL);
-		s[0] = 48;
-		s[1] = 0;
-	}
+	int		i;
+
+	i = n;
+	s = malloc(sizeof(char) * 2);
+	if (!s)
+		return (NULL);
+	s[0] = 48;
+	s[1] = 0;
 	return (s);
 }
 
