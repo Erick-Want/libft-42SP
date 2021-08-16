@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:12:14 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/16 13:01:42 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/16 13:50:19 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,37 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*newstr;
 	size_t	i;
-	size_t	beg;
-	size_t	end;
+	size_t	i_beggin;
+	size_t	i_end;
 
-	i = 0;
-	beg = 0;
-	end = ft_strlen(s1) - 1;
-	while (ft_strrchr(set, s1[beg]))
-		beg++;
-	while (ft_strrchr(set, s1[end]))
-		end--;
-	if (end < beg)
+	i_beggin = 0;
+	i_end = ft_strlen(s1);
+	while (ft_strchr(set, s1[i_beggin]))
+		i_beggin++;
+	while (ft_strchr(set, s1[i_end]))
+		i_end--;
+	if (i_end < i_beggin)
 		return (ft_calloc(1, sizeof(char)));
-	newstr = malloc (sizeof(char) * (end - beg + 2));
+	newstr = malloc(sizeof(char) * (i_end - i_beggin + 1));
 	if (newstr == NULL)
 		return (NULL);
-	while (i <= end - beg)
+	i = 0;
+	while (i <= i_end - i_beggin)
 	{
-		newstr[i] = s1[beg + i];
+		newstr[i] = s1[i_beggin + i];
 		i++;
 	}
 	newstr[i] = '\0';
 	return (newstr);
 }
+
+// int main()
+// {
+// 	char	*s;
+// 	char	*set;
+
+// 	s = "-a-Erick-Matheusa--a";
+// 	set = "a-";
+// 	s = ft_strtrim(s, set);
+// 	printf("%s", s);
+// }
