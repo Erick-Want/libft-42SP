@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:12:14 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/16 14:04:58 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/16 14:07:10 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (newstr);
 }
 
-int main()
-{
-	char	*s;
-	char	*set;
+// int main()
+// {
+// 	char	*s;
+// 	char	*set;
 
-	s = "-a-Erick-Matheusa--a";
-	set = "a-";
-	s = ft_strtrim(s, set);
-	printf("%s", s);
-}
+// 	s = "-a-Erick-Matheusa--a";
+// 	set = "a-";
+// 	s = ft_strtrim(s, set);
+// 	printf("%s", s);
+// }
