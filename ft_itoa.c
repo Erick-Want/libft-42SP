@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 11:35:59 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/16 13:13:25 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/16 13:29:40 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,8 @@ char *copy(unsigned int nb, size_t i, char *s)
 	s[i] = '\0';
 	while (nb != 0)
 	{
-		s[i] = nb % 10 + 48;
+		s[--i] = nb % 10 + 48;
 		nb = nb / 10;
-		i--;
 	}
 	return (s);
 }
@@ -41,10 +40,9 @@ char *copy(unsigned int nb, size_t i, char *s)
 char	*is_zero(int n)
 {
 	char	*s;
-	int		i;
 
-	i = n;
-	s = malloc(sizeof(char) * 2);
+	n = 2;
+	s = malloc(sizeof(char) * n);
 	if (!s)
 		return (NULL);
 	s[0] = 48;
@@ -56,7 +54,7 @@ char	*ft_itoa(int n)
 {
 	char			*s;
 	unsigned int	nb;
-	size_t			i;
+	int				i;
 
 	i = ft_len_int(n);
 	nb = n;
