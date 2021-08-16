@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:12:14 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/16 14:48:45 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/16 14:53:54 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,19 +56,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		i_beg++;
 	while (s1[i_end] && ft_strrchr(set, s1[i_end]))
 		i_end--;
-	if (i_beg > i_end)
-		return (ft_calloc(1, sizeof(char)));
-	newstr = malloc(sizeof(char) * (i_end - i_beg + 2));
-	if (!newstr)
-		return (NULL);
-	i = 0;
-	while (i <= (i_end - i_beg))
-	{
-		newstr[i] = s1[i_beg + i];
-		i++;
-	}
-	newstr[i] = '\0';
-	return (newstr);
+	return (ft_substr(s1, i_beg, (i_end - i_beg + 1)));
 }
 
 // int main()
@@ -76,7 +64,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 // 	char	*s;
 // 	char	*set;
 
-// 	s = "-a-aErick-Matheus-a-";
+// 	s = "-a-aErick-Matheus-a-";// 16 - 4 = 12
 // 	set = "-a";
 // 	s = ft_strtrim(s, set);
 // 	printf("%s", s);
