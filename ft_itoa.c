@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 11:35:59 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/16 13:07:13 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/16 13:13:25 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static unsigned int	ft_len_int(int n)
 
 char *copy(unsigned int nb, size_t i, char *s)
 {
-	s[--i] = '\0';
+	s[i] = '\0';
 	while (nb != 0)
 	{
 		s[i] = nb % 10 + 48;
