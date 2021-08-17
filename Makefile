@@ -6,7 +6,7 @@
 #    By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/05 15:01:38 by ermatheu          #+#    #+#              #
-#    Updated: 2021/08/14 13:23:08 by ermatheu         ###   ########.fr        #
+#    Updated: 2021/08/16 23:56:12 by ermatheu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,14 @@ SRCS = ft_isalpha.c \
 		ft_itoa.c \
 		ft_split.c \
 
+BONUS = ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+
+OBJS_BONUS = ${BONUS:.c=.o}
+
 OBJS = ${SRCS:.c=.o}
 CFLAGS = -Wall -Werror -Wextra
 CC = gcc
@@ -56,13 +64,18 @@ all: ${NAME}
 ${NAME}: ${OBJS}
 	ar rc ${NAME} ${OBJS}
 
+bonus: ${OBJS_BONUS}
+	ar rc ${NAME} ${OBJS_BONUS}
+
 # ${OBJS}: ${SRCS}
 # 	${CC} ${CFLAGS} -c ${SRCS}
 
 clean:
-	rm -f ${OBJS}
+	rm -f ${OBJS} ${OBJS_BONUS}
 
 fclean: clean
 	rm -f ${NAME}
 
 re: fclean all
+
+.PHONY: all clean re
