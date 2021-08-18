@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 11:35:59 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/16 13:37:06 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/18 11:38:43 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static unsigned int	ft_len_int(int n)
 	return (size);
 }
 
-char *copy(unsigned int nb, size_t i, char *s)
+char	*copy(unsigned int nb, size_t i, char *s)
 {
 	s[i] = '\0';
 	while (nb != 0)
@@ -63,7 +63,7 @@ char	*ft_itoa(int n)
 	if (n < 0)
 	{
 		nb = n * (-1);
-		s = malloc(sizeof(char) * i + 2);// -2147483648\0
+		s = malloc(sizeof(char) * i + 2);
 		if (!s)
 			return (NULL);
 		i++;
@@ -71,19 +71,9 @@ char	*ft_itoa(int n)
 	}
 	else
 	{
-		s = malloc(sizeof(char) * i + 1);// 2147483647
+		s = malloc(sizeof(char) * i + 1);
 		if (s == NULL)
 			return (NULL);
 	}
 	return (copy(nb, i, s));
 }
-
-// int main()
-// {
-// 	int i;
-// 	char *s1;
-
-// 	i = -1234;
-// 	s1 = ft_itoa(i);
-// 	printf("%s", s1);
-// }

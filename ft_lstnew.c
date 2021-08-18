@@ -6,13 +6,13 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 15:22:27 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/17 14:11:05 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/18 11:06:59 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
 	t_list	*new;
 
@@ -22,5 +22,4 @@ t_list *ft_lstnew(void *content)
 	new->content = content;
 	new->next = NULL;
 	return (new);
-
 }
