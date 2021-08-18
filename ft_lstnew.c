@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 15:22:27 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/16 16:40:50 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/17 14:11:05 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ t_list *ft_lstnew(void *content)
 	t_list	*new;
 
 	new = malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
 	new->content = content;
 	new->next = NULL;
-	//*content = new;
 	return (new);
 
 }

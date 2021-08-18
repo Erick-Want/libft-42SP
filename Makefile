@@ -6,7 +6,7 @@
 #    By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/05 15:01:38 by ermatheu          #+#    #+#              #
-#    Updated: 2021/08/16 23:56:12 by ermatheu         ###   ########.fr        #
+#    Updated: 2021/08/17 12:58:23 by ermatheu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,10 @@ BONUS = ft_lstnew.c \
 		ft_lstsize.c \
 		ft_lstlast.c \
 		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c \
 
 OBJS_BONUS = ${BONUS:.c=.o}
 
