@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 15:00:09 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/12 21:20:09 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/18 13:30:58 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*str;
 	ssize_t	x;
 
+	if (!s1)
+		return (NULL);
 	i = ft_strlen(s1);
 	x = ft_strlen(s2);
 	str = malloc(sizeof(char) * (i + x + 1));
