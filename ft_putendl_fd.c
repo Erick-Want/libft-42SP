@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 14:59:45 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/18 13:29:04 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/18 13:32:13 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_putendl_fd(char *s, int fd)
 
 	i = 0;
 	if (!s)
-		return (NULL);
+		return ;
 	while (s[i] != '\0')
 	{
 		write(fd, &s[i], 1);
