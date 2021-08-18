@@ -6,61 +6,11 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 20:11:43 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/16 10:06:08 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/18 13:22:15 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-
-// char *ft_split(char const *s, char c)
-// {
-// 	int	i;
-// 	int	x;
-// 	int	y;
-// 	char	*s1;
-// 	char	*s2;
-
-// 	i = 0;
-// 	x = 0;
-// 	y = 0;
-// 	while (s[y] == c)
-// 		y++;
-// 	while (s[i + y] != c && s[i + y] != '\0')//s = "-erick--matheus"
-// 		i++;
-// 	s1 = malloc(sizeof(char) * i + 1);
-// 	if (!s1)
-// 		return (NULL);
-// 	s1[i] = '\0';
-// 	while (--i >= 0)
-// 		s1[i] = s[i + y];
-// 	y = y + ft_strlen(s1);
-// 	while (s[y] == c)
-// 		y++;
-// 	while (s[x + y] != c && s[x + y] != '\0')
-// 		x++;
-// 	s2 = malloc(sizeof(char) * x + 1);
-// 	if (!s2)
-// 		return (NULL);
-// 	s2[x] = '\0';
-// 	while (--x >= 0)
-// 		s2[x] = s[x + y];
-// 	return (s2);
-// }
-
-// int main()
-// {
-// 	char	*s;
-// 	char	c;
-
-// 	s = "erick-matheus";
-// 	c = '-';
-// 	printf("%s", ft_split(s, c));
-// }
-//primeiro passo: contar quantas palavras tem???
-// ---- aloca a matrix com qtd de palavras mais nulo
-//segundo passo: ir na primeira posição e contar quantas letras tem a primeira palavra e copiar a palavra
-//terceiro passo: setar a ultima posição da matrix como nulo
 
 static int	count_words(const char *s, char c)
 {
@@ -122,47 +72,43 @@ static void	copy_string(char **matrix, const char *s, char c)
 	}
 }
 
+static int	alloc_string(char const *s, char **matrix, char c)
+{
+	int	i;
+	int	y;
+
+	i = 0;
+	y = 0;
+	while (s[y] != '\0')
+	{
+		if (s[y] != c)
+		{
+			matrix[i] = malloc(sizeof(char) * count_letter(&s[y], c) + 1);
+			if (!matrix)
+				return (0);
+			i++;
+			y = y + count_letter(&s[y], c);
+		}
+		else
+			y++;
+	}
+	return (1);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		i;
-	int		y;
 	char	**matrix;
 
 	if (!s)
 		return (NULL);
 	i = count_words(s, c);
-	y = -1;
-	matrix = malloc(sizeof(char *) * i + 1);
+	matrix = malloc(sizeof(char *) * (i + 1));
 	if (!matrix)
 		return (NULL);
 	matrix[i] = 0;
-	i = 0;
-	while (s[++y] != '\0')
-	{
-		if (s[y] != c)
-		{
-			matrix[i++] = malloc(sizeof(char) * count_letter(&s[y], c) + 1);
-			if (!matrix)
-				return (NULL);
-			y = y + count_letter(&s[y], c);
-		}
-	}
+	if (!alloc_string(s, matrix, c))
+		return (NULL);
 	copy_string(matrix, s, c);
 	return (matrix);
 }
-
-// int main()
-// {
-// 	char	*s;
-// 	char	**matrix;
-// 	char	c;
-
-// 	s = "      split       this for   me  !       ";
-// 	c = ' ';
-// 	matrix = ft_split(s, c);
-// 	while (*matrix)
-// 	{
-// 		printf("%s\n", *matrix);
-// 		matrix++;
-// 	}
-// }

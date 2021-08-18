@@ -6,7 +6,7 @@
 #    By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/05 15:01:38 by ermatheu          #+#    #+#              #
-#    Updated: 2021/08/17 12:58:23 by ermatheu         ###   ########.fr        #
+#    Updated: 2021/08/18 12:42:56 by ermatheu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,9 +70,6 @@ ${NAME}: ${OBJS}
 
 bonus: ${OBJS_BONUS}
 	ar rc ${NAME} ${OBJS_BONUS}
-
-# ${OBJS}: ${SRCS}
-# 	${CC} ${CFLAGS} -c ${SRCS}
 
 clean:
 	rm -f ${OBJS} ${OBJS_BONUS}
