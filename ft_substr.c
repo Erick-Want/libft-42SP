@@ -6,7 +6,7 @@
 /*   By: ermatheu <ermatheu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 15:01:09 by ermatheu          #+#    #+#             */
-/*   Updated: 2021/08/11 15:52:54 by ermatheu         ###   ########.fr       */
+/*   Updated: 2021/08/25 11:20:46 by ermatheu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (len > (len_s - start))
 		len = len_s - start;
 	sub = malloc(sizeof(char) * len + 1);
-	if (sub == NULL || s[0] == '\0')
+	if (sub == NULL)
 		return (NULL);
 	while ((int)len > ++i)
 		sub[i] = s[start + i];
